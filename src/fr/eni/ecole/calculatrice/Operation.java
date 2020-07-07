@@ -1,7 +1,5 @@
 package fr.eni.ecole.calculatrice;
 
-import java.lang.constant.Constable;
-
 public class Operation {
 
     /**
