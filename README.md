@@ -25,7 +25,7 @@ La calculatrice devra prendre en compte cela pour éviter d'afficher un résulta
 Ce projet a été construit à partir de zéro en suivant des instructions spécifiques.
 
 ### Statut
-V1.01 - Terminée
+V1.02 - Terminée
 
 #### Dernière mise à jour
 07/07/2020  

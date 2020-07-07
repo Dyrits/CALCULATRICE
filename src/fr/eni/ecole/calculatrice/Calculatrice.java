@@ -22,24 +22,37 @@ public class Calculatrice {
             y = saisirEntier();
             System.out.println();
             System.out.println("Résultat de l'opération #" + operation + " : ");
-            try {
-                int result = switch (operateur) {
-                    case '+' -> Operation.ajouter(x, y);
-                    case '-' -> Operation.soustraire(x, y);
-                    case '*' -> Operation.multiplier(x, y);
-                    case '/' -> x / y;
-                    default -> x % y; // Cas correspondant au %.
-                };
-                System.out.println(x + " " + operateur + " " + y + " = " + result);
-            } catch (DepassementCapaciteException exception) {
-                System.out.println(exception.getMessage()); // Délai en utilisant "System.err"
-            } catch (ArithmeticException exception) {
-                System.out.println("Il est impossible d'effectuer une division par zéro."); // Délai en utilisant "System.err"
-            }
+            afficherResultat(x, operateur, y);
             operation ++;
             System.out.println();
         } while (operateur != 'Q');
         console.close();
+    }
+
+    /**
+     * Formate et affiche le résultat d'une opération entre deux valeurs.
+     * @param x int | 1ère valeur.
+     * @param operateur char | Caractère désignant le type d'opération.
+     * @param y int | 2nde valeur.
+     */
+    public static void afficherResultat(int x, char operateur, int y) {
+        try {
+            System.out.println(
+                    x + " " +
+                    operateur + " " +
+                    y + " = " +
+                    switch (operateur) {
+                        case '+' -> Operation.ajouter(x, y);
+                        case '-' -> Operation.soustraire(x, y);
+                        case '*' -> Operation.multiplier(x, y);
+                        case '/' -> x / y;
+                        default -> x % y; // Cas correspondant au %.
+            });
+        } catch (DepassementCapaciteException exception) {
+            System.out.println(exception.getMessage()); // Délai en utilisant "System.err"
+        } catch (ArithmeticException exception) {
+            System.out.println("Il est impossible d'effectuer une division par zéro."); // Délai en utilisant "System.err"
+        }
     }
     
 
