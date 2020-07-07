@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class Calculatrice {
     private static Scanner console;
 
+    /**
+     * Méthode principale permettant d'effectuer des calculs arithmétiques basiques.
+     *
+     * @param args | Aucun argument requis.
+     */
     public static void main(String[] args) {
         console = new Scanner(System.in);
         int x, y, operation = 1;
@@ -17,15 +22,15 @@ public class Calculatrice {
             y = inputInt();
             try {
                 System.out.println();
-                System.out.print("Résultat de l'opération #" + operation + " : " + x + " " + operator + " " + y + " = ");
-                switch (operator) {
-                    case '+' -> System.out.print(Operation.ajouter(x, y));
-                    case '-' -> System.out.print(Operation.soustraire(x, y));
-                    case '*' -> System.out.print(Operation.multiplier(x, y));
-                    case '/' -> System.out.print(x / y);
-                    case '%' -> System.out.print(x % y);
-                }
-                System.out.println();
+                System.out.println("Résultat de l'opération #" + operation + " : ");
+                int result = switch (operator) {
+                    case '+' -> Operation.ajouter(x, y);
+                    case '-' -> Operation.soustraire(x, y);
+                    case '*' -> Operation.multiplier(x, y);
+                    case '/' -> x / y;
+                    default -> x % y; // Cas correspondant au %.
+                };
+                System.out.println(x + " " + operator + " " + y + " = " + result);
             } catch (DepassementCapaciteException exception) {
                 System.err.println(exception.getMessage());
             } catch (ArithmeticException exception) {
