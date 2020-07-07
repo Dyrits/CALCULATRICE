@@ -32,9 +32,9 @@ public class Calculatrice {
                 };
                 System.out.println(x + " " + operateur + " " + y + " = " + result);
             } catch (DepassementCapaciteException exception) {
-                System.err.println(exception.getMessage());
+                System.out.println(exception.getMessage()); // Délai en utilisant "System.err"
             } catch (ArithmeticException exception) {
-                System.err.println("Il est impossible d'effectuer une division par zéro.");
+                System.out.println("Il est impossible d'effectuer une division par zéro."); // Délai en utilisant "System.err"
             }
             operation ++;
             System.out.println();
