@@ -4,7 +4,7 @@
 
 ### Cursus
 ENI | La Programmation Orientée Objet (POO) avec Java  
-~ [Module 7 - Les exceptions]()
+~ [Module 7 - Les exceptions](https://github.com/Dyrits/CALCULATRICE/blob/master/Module%2007%20-%20Enonc%C3%A9%20TP%20-%20Les%20exceptions.pdf)
 
 ### Énoncés (par l'ENI)
 L'objectif est de créer une mini calculatrice réalisant des opérations d'addition, de soustraction, de multiplication, de division entière et de reste de celle-ci.
@@ -25,7 +25,7 @@ La calculatrice devra prendre en compte cela pour éviter d'afficher un résulta
 Ce projet a été construit à partir de zéro en suivant des instructions spécifiques.
 
 ### Statut
-Terminée
+V1.01 - Terminée
 
 #### Dernière mise à jour
 07/07/2020  

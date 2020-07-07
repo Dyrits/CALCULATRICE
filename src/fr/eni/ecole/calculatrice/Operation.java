@@ -42,26 +42,4 @@ public class Operation {
         if ((long) x * y == x * y) { return x * y; }
         throw new DepassementCapaciteException();
     }
-
-    public static int diviser(int x, int y) {
-        try {
-            return x / y;
-        } catch (ArithmeticException exception) {
-            System.err.println("Il est impossible d'effectuer une division par zéro.");
-            System.err.println("Le nombre entré en paramètre n'a pas été divisé.");
-            System.err.println(exception);
-            return x;
-        }
-    }
-
-    public static int moduler(int x, int y) {
-        try {
-            return x % y;
-        } catch (ArithmeticException exception) {
-            System.err.println("Il est impossible d'effectuer une division par zéro.");
-            System.err.println("Le nombre entré en paramètre n'a pas été modulé.");
-            System.err.println(exception);
-            return x;
-        }
-    }
 }

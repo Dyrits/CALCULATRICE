@@ -7,37 +7,31 @@ public class Calculatrice {
 
     public static void main(String[] args) {
         console = new Scanner(System.in);
-        int x, y, resultat = 0;
+        int x, y, operation = 1;
         char operator;
         do {
+            System.out.println("Operation #" + operation);
             x = inputInt();
             operator = inputOperator();
             if (operator == 'Q') { continue; }
             y = inputInt();
             try {
+                System.out.println();
+                System.out.print("Résultat de l'opération #" + operation + " : " + x + " " + operator + " " + y + " = ");
                 switch (operator) {
-                    case '+':
-                        resultat = Operation.ajouter(x, y);
-                        break;
-                    case '-':
-                        resultat = Operation.soustraire(x, y);
-                        break;
-                    case '*':
-                        resultat = Operation.multiplier(x, y);
-                        break;
-                    case '/':
-                        resultat =  x / y;
-                        break;
-                    case '%':
-                        resultat = x % y;
-                        break;
+                    case '+' -> System.out.print(Operation.ajouter(x, y));
+                    case '-' -> System.out.print(Operation.soustraire(x, y));
+                    case '*' -> System.out.print(Operation.multiplier(x, y));
+                    case '/' -> System.out.print(x / y);
+                    case '%' -> System.out.print(x % y);
                 }
-                System.out.println(x + " " + operator + " " + y + " = " + resultat);
+                System.out.println();
             } catch (DepassementCapaciteException exception) {
                 System.err.println(exception.getMessage());
             } catch (ArithmeticException exception) {
                 System.err.println("Il est impossible d'effectuer une division par zéro.");
             }
+            operation ++;
             System.out.println();
         } while (operator != 'Q');
         console.close();
@@ -68,8 +62,7 @@ public class Calculatrice {
     public static char inputOperator() {
         char input;
         do {
-            System.out.println("Veuillez saisir un opérateur.");
-            System.out.println("Saisissez Q pour quitter.");
+            System.out.println("Veuillez saisir un opérateur. Saisissez Q pour quitter.");
             System.out.println("Liste des opérateurs valides: [+] [-] [*] [/] [%]");
             input = console.next().toUpperCase().charAt(0);
             if (!isOperator(input)) {
