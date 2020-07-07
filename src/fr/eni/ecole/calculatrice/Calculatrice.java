@@ -22,7 +22,7 @@ public class Calculatrice {
             y = saisirEntier();
             System.out.println();
             System.out.println("Résultat de l'opération #" + operation + " : ");
-            afficherResultat(x, operateur, y);
+            calculer(x, operateur, y);
             operation ++;
             System.out.println();
         } while (operateur != 'Q');
@@ -30,12 +30,12 @@ public class Calculatrice {
     }
 
     /**
-     * Formate et affiche le résultat d'une opération entre deux valeurs.
+     * Calcule, formate et affiche le résultat d'une opération entre deux valeurs.
      * @param x int | 1ère valeur.
      * @param operateur char | Caractère désignant le type d'opération.
      * @param y int | 2nde valeur.
      */
-    public static void afficherResultat(int x, char operateur, int y) {
+    public static void calculer(int x, char operateur, int y) {
         try {
             System.out.println(
                     x + " " +
